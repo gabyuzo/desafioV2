@@ -1,5 +1,4 @@
-package com.extrato.resource;
-
+package br.com.cielo.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -7,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.extrato.domain.RestResult;
-import com.extrato.service.ExtratoLançamentoService;
+import br.com.cielo.domain.RestResult;
+import br.com.cielo.service.ExtratoLancamentoService;
 
 /**
  * @author gishikawa
@@ -16,15 +15,15 @@ import com.extrato.service.ExtratoLançamentoService;
  */
 @RestController
 @EnableAutoConfiguration
-@RequestMapping("/extrato")
-public class ExtratoLançamentoServiceResource {
-    
+@RequestMapping("/vendas")
+public class ExtratoLancamentoServiceResource {
+
     @Autowired
-    private transient ExtratoLançamentoService extratoLançamentoService;
-        
+    private transient ExtratoLancamentoService extratoLancamentoService;
+
     @RequestMapping(value = "/lancamentos", method = RequestMethod.GET)
     public RestResult findSales() {
-        return this.extratoLançamentoService.findSales();
+        return this.extratoLancamentoService.findSales();
     }
 
 }

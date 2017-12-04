@@ -6,7 +6,7 @@ var app = angular.module('myApp', []);
 		}
 		
 		function extrato(){
-			return $http.get("extrato/lancamentos");
+			return $http.get("vendas/lancamentos");
 		}
 	});
 	
