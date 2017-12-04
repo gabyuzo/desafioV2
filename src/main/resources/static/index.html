@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="myApp">
+	<head>
+		<title>Desafio AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="desafio.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<p>Data do lançamento | Descrição | Número | Situação | Data de confirmação | Dados bancários | Valor final</p>
+			<table class="table" ng-controller="MyController as vm">
+			<tr ng-repeat="listaControleLancamento in extratos.listaControleLancamento">
+			<td>{{listaControleLancamento.dataLancamentoContaCorrenteCliente}} </td>
+			<td>| {{listaControleLancamento.lancamentoContaCorrenteCliente.nomeTipoOperacao}} </td>
+			<td>| {{listaControleLancamento.lancamentoContaCorrenteCliente.numeroRemessaBanco}} </td>
+			<td>| {{listaControleLancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa}} </td>
+			<td>| {{listaControleLancamento.dataEfetivaLancamento}} </td>
+			<td>| {{listaControleLancamento.nomeBanco}}Ag{{listaControleLancamento.lancamentoContaCorrenteCliente.dadosDomicilioBancario.numeroAgencia}}CC{{listaControleLancamento.lancamentoContaCorrenteCliente.dadosDomicilioBancario.numeroContaCorrente}} </td>
+			<td>| R${{listaControleLancamento.valorLancamentoRemessa}}</td>
+			</tr>
+			</table>
+		</div>
+	</body>
+</html>
